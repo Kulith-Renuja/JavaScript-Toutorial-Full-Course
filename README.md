@@ -21,7 +21,7 @@ This repository contains all the files and code snippets I used while practicing
 ## How to Use
 1. Clone the repository:
    ```sh
-   git clone https://github.com/yourusername/JavaScript-Tutorial-Full-Course.git
+   git clone https://github.com/Kulith-Renuja/JavaScript-Toutorial-Full-Course.git
    ```
 2. Open the files in your favorite code editor (VS Code, Sublime, etc.).
 3. Experiment with the code and enhance your JavaScript skills.
