@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <title>Document</title>
+   <style>
+      body{
+         text-align: center;
+         font-family: Arial, sans-serif;
+         background-color: #f0f8ff;
+      }
+      .subscribe{
+         background-color: rgb(0, 0, 0);
+         color: white;
+         padding: 10px;
+         border: none;
+         border-radius: 20px;
+         cursor: pointer;
+         font-weight: bold;
+         margin-top: 30px;
+         margin-bottom: 30px;
+      }
+      .subscribed{
+         background-color: rgb(240,240,240);
+         color: black;
+      }
+      .cost{
+         padding: 10px;
+         border: 1px solid black;
+         border-radius: 10px;
+         margin-top: 20px;
+         font-size: 1.5em;
+      }
+      .calculate{
+         background-color: rgb(14, 64, 31);
+         color: white;
+         padding: 17px;
+         border: none;
+         border-radius: 5px;
+         cursor: pointer;
+         font-weight: bold;
+         margin-top: 20px;
+      }
+
+   </style>
+</head>
+<body>
+   <p>YouTube</p>
+   <button class="subscribe" onclick="
+      subscribe();
+   ">subscribe</button>
+
+
+   <p>amazon shipping calculator</p>
+   <p>if cost less that40 it will add 10</p>
+
+   <input type="text" placeholder="cost of order " class="cost" onkeydown="
+      handleCostKeydown(event);
+      ">
+
+   <button class="calculate" onclick="
+         calculatetotal();
+   ">calculate</button>
+   <p class="lastcost"></p>
+
+   
+   <script>
+      function subscribe() {
+
+         // console.log(document.querySelector('.subscribe'));
+         const subscribe = document.querySelector('.subscribe');
+         console.log(subscribe.innerHTML);
+         if(subscribe.innerHTML === 'subscribe'){
+         // we can use innerText to get the text of the element if we use innerHTML it will get with spacses
+         subscribe.innerHTML = 'subscribed';
+         subscribe.classList.add('subscribed'); // to add class to the button element then we can use css to style it
+         }
+         else{
+               subscribe.innerHTML = 'subscribe';
+               subscribe.classList.remove('subscribed'); // to remove class to the button element then we can use css to style it
+         } 
+      }
+
+      function calculatetotal() {
+         const inputvalue = document.querySelector('.cost');
+         //const inputvalue = document.querySelector('.cost').value;
+         //console.log(inputvalue.value);
+         let cost = Number(inputvalue.value); // to convert string to number
+         //console.log(typeof cost);
+
+         if(cost < 40){
+            //const total = parseInt(cost) + 10; to consvert string to number second way
+            cost = cost + 10;
+         }
+         document.querySelector('.lastcost').innerHTML = `Total cost is ${cost}`;
+      }
+
+      // next add how to calculate when enter key is pressed
+      // clicls,keydown = event
+      // onclick, onkeydown = eventlistener
+
+      // event listener is used to listen to the event
+      // onclick = click event
+      // onkeydown = keydown event
+      // onkeyup = keyup event
+      // onkeypress = keypress event
+      // onmouseover = mouseover event
+      // many more.......
+
+      function handleCostKeydown(event) {
+         //console.log('typing');
+         //console.log(event); - this shows all the properties of the event
+         //console.log(event.key);
+   
+         // if enter key is pressed then calculate the total
+         if(event.key === 'Enter'){
+            calculatetotal();
+         }
+
+      }
+      
+      // Number() - to convert string to number
+      // parseInt() - to convert string to number
+      // parseFloat() - to convert string to number
+      // String() - to convert number to string
+
+      console.log('25'-5); // 20 - if sting only contains numbers then it will convert to number for -,*,/,% but not for +
+      console.log('25'+5); // 255 
+
+      // next build in functions - window object 
+
+      // document - what inside the html   , window - what outside the browser
+      //window.document - html
+      //window.console - console
+      //window.alert - alert 
+
+      // how ever we can use these functions without window object
+      //console.log('hello');, alert('hello'); , document.write('hello');
+
+
+   </script>
+</body>
+</html>

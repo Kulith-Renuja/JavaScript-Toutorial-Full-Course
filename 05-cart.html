@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Cart</h1>
+    <!-- open web page and rightclick and go inpection and go console to see results-->
+    <button onclick="
+        console.log(`cart: ${cart}`);">show cart
+    </button>
+    <button onclick="cart += 1;
+    console.log(`cart: ${cart}`);">addd one
+    </button>
+    <button onclick="cart += 2;
+    console.log(`cart: ${cart}`);">
+        add two
+    </button>
+    <button onclick="cart += 3;
+    console.log(`cart : ${cart}`)">add tree</button>
+
+    <button onclick="cart = 0;
+    console.log(`cart : ${cart}`);">reset</button>
+
+    <script>
+        let cart = 0;
+    </script>
+</body>
+</html>

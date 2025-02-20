@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <title>Document</title>
+</head>
+<body>
+   <button>hello</button>
+   <button class="second-button">second button </button>
+   <script>
+      /*
+      // DOM is another built in object call Document Object
+      document.body.innerHTML = "hello"; // it will print hello in the body of the html file
+      // in this we used . to access the property of the object .body , .innerHTML
+      // documnet. is connect to the html file
+      document.title = "hello";
+      */
+
+      /*
+      // other properties and methods DOM
+      console.log(document.title); // we can change the title of the document - document.title = "hello";
+      console.log(document.URL);
+
+      console.log(document.body);
+      // DOM combine HTML and JavaScript
+      // HTML inside javascript as object 
+      console.log(typeof document.body); // object
+
+      console.log(document.body.innerHTML); // all html code as string
+      document.body.innerHTML = '<button>hello wold</button>'; // it will print the button as string
+      */
+      
+      //document.querySelector() - gets ant elemt of page and put inside js it gets first element
+
+      console.log(document.querySelector( 'button' )); // it will print the button element
+
+      // thses get as object we can use the properties and methods of the object
+      
+      console.log(document.querySelector( 'button' ).innerHTML); // it will print the innerHTML of the button
+      document.querySelector( 'button' ).innerHTML = "changed"; // it will change the innerHTML of the button
+      console.log(document.querySelector( 'button' ).innerHTML); // output - changed
+
+      // we can also use the class name to get the element
+      document.querySelector( '.second-button' ).innerHTML = "second button changed";
+
+      // html element are also object in javascript
+      const button = document.querySelector( '.second-button' );
+      console.log(button);
+      console.log(button.innerHTML); // output - second button changed
+
+   </script>
+</body>
+</html>

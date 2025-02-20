@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+</head>
+<body>
+   <script>
+
+    // indroduction to object
+    const object1 = {
+       // PROPERTY:VALUE
+        name: 'John',
+        age: 25
+    }  
+    console.log(object1);
+    console.log(object1.name);
+
+    // change value object
+    object1.name = 'Jane';
+    console.log(object1);
+
+    // ADD NEW PROPERTY
+    object1.newproperty = 'new value';
+    console.log(object1); // new property added
+
+
+    // delete PROPERTY
+    delete object1.newproperty;
+    console.log(object1);
+
+    console.log(typeof object1); // object
+
+
+   // RACKET notation - use when property name is not valid,properties that don't work with dot notation
+   const object2 = {
+      'name': 'John',
+      'age': 25,
+      ['skin-colour']:'brown'
+   }
+   console.log(object2.name);
+   console.log(object2['name']);
+   // console.log(object2.gender); this shows error
+   console.log(object2['gender']); // this works value is undefined
+   console.log(object2['skin-colour']); // object2['varible'],object2[''deleiver'*'time'] not only string we can use variable ,calculations
+
+   // object inside object - we can add any tupe of values inside object
+   const object3 = {
+      name: 'John',
+      age: 25,
+      address: {
+         street: '123 main street',
+         city: 'New York'
+      }
+   }
+   console.log(object3.address.city);
+
+   // function inside object( METHOD ) - fuction is other type of value in JS
+   const object4 = {
+      name: 'John',
+      age: 25,
+      address: {
+         street: '123 main street',
+         city: 'New York'
+      },
+      getBirthYear: function function1(){
+         //return 2021 - this.age;
+         console.log(2021);
+      }
+   }
+   object4.getBirthYear();
+   console.log(object4.getBirthYear()); // undefined because we are not returning anything
+   // to get the value we need to use return if we remove comment from return it will work
+   //console.log(object4.getBirthYear()); // 2021
+   //console.log(object4.getBirthYear); // function output - function function1(){return 2021 - this.age;}
+
+   // cosole is also object and log is method and math.random like that,there are many methods - these are call --BUILT IN OBJECTS-- we can use them directly
+   console.log(typeof console);
+   console.log(typeof console.log);
+
+   // two more built in objects - JSON and localStorage
+
+   // JSON - JavaScript Object Notation - used to send data to server and get data from server
+   // a syntax , similar to JS object syntax,but less features - must me inside "" double quotes and not support functions
+   // JSON can understand every programming language but JS object can't understand other languages
+   // use send data between computers and when we store data
+
+   // JSON.stringify()-(built in JSON object) - convert JS object to JSON
+
+   const object5 = {
+      name: 'John',
+      age: 25,
+      address: {
+         street: '123 main street',
+         city: 'New York'
+      },
+      getBirthYear: function function1(){
+         //return 2021 - this.age;
+         console.log(2021);
+      }
+   }
+   console.log(object5);
+   const object5JSON = JSON.stringify(object5);
+   console.log(object5JSON); // not support functions because it is not valid JSON
+   console.log(typeof JSON.stringify(object5)); // string
+
+   // JSON.parse() - convert JSON to JS object
+   const object6 = JSON.parse(object5JSON);
+   console.log(object6); // object
+
+   // localStorage - store data in browser
+   // varible storge are temporary,when we refresh the page it will be gone
+   // localStorage is permanent,even if we close the browser and open it again it will be there
+   // localStorage.setItem(the value what we access later) - store data local storage only support strings 
+
+   localStorage.setItem('name','John'); // when run this code in browser it will store in browser
+   console.log(localStorage.getItem('name')); // to get the value
+
+   // to store object in local storage we need to convert it to string -local storage only support strings 
+   localStorage.setItem('object5',JSON.stringify(object5)); 
+   console.log(JSON.parse(localStorage.getItem('object5'))); // to get the value - output is object
+   console.log(localStorage.getItem('object5'));// to get the value - but output is string
+
+   // if score Null we check it by if(!score) or if(score === null) this give true if score is null
+
+   // objects have   properties and methods also other values have propeties and methods
+   console.log("hello".length); // string have length property
+   console.log([1,2,3].length); // array have length property
+   console.log(object5.name.length); // object have length property
+   console.log(object5.getBirthYear.length); // function have length property
+
+   console.log('hello'.toUpperCase()); // string have toUpperCase method
+
+   // these call auto boxing - when we use property or method on value that is not object JS automatically convert it to object
+
+   const object7 = {
+      name: 'John'
+      } // reference to object - name save in memor 
+   const object8 = object7; // both object7 and object8 use same memory
+
+   object7.name = 'acdd'; // change name in object7
+   console.log(object7.name); // acdd
+   console.log(object8.name);// acdd
+   object8.name = 'aaaa'; // change name in object8
+   console.log(object7.name); // aaaa
+   console.log(object8.name); // aaaa
+
+      // can't compare objects directly -  these are compared by reference not by value
+      const object9 = {
+         name: 'aaaa'
+      }
+      console.log(object7 === object9); // fales because they are in different memory
+      console.log(object7 == object8); // true because they are in same memory
+
+      // to compare objects we need to compare their properties - for that we can use 2 ways
+      // 1. const name = object7.name;
+      // 2. const {name} = object7; object destructuring
+      // destructuring - we can get properties from object and store them in variables
+      const {name} = object7;
+      console.log(name); // aaaa
+
+      // if there are 2 or more properties we can use object destructuring
+      const object10 = {
+         name2: 'John',
+         age: 25
+      }
+      const {name2,age} = object10;
+      console.log(name,age); // John 25
+
+      //short hand property - if property name and variable name are same we can use short hand property
+      const name3 = 'John';
+      const age2 = 25;
+      const object11 = {
+         name3,
+         age2
+      }
+      console.log(object11); // {name3: "John", age2: 25}
+      // ALSO WE CAN DO THIS TO methods
+   </script>
+</body>
+</html>
