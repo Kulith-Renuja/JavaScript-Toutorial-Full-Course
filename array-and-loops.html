@@ -81,8 +81,50 @@
         console.log(array2);
         */
 
+        // destuction - get values from array
+        const array1 = [1, 2, 3, 4];
+        const [a, b, c, d] = array1;
         
+        // breack to stop the loop
+        for(let i = 0; i < 10; i++){
+            if(i === 5){
+                break;
+            }
+            console.log(i);
+        }
+
+        // continue to skip the current iteration
+        for(let i = 0; i < 10; i++){
+            if(i === 5){
+                continue; // skip the current iteration 5 not print
+            }
+            console.log(i);
+        }
+
+        // in while loop if we use continue then we need to increment the value of i
+        let i = 0;
+        while(i < 10){
+            if(i === 5){
+                i++; // increment the value of i
+                continue;
+            }
+            console.log(i);
+            i++;
+        }
         
+        // function to double the array values
+        function Doublearray(array1){
+            const array2 = [];
+            for(let i = 0; i < array1.length; i++){
+                array2.push(array1[i] * 2);
+            }
+            return array2;
+        }
+        console.log(Doublearray([1, 2, 3, 4, 5]));
+        // we can us this function to double any array values
+
+        //with return we can stop the loops and function
+
 
 
     </script>

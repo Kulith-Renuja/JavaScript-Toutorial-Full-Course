@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        // function are also values
+        // function can be assigned to variables
+        /*
+        const function1 = function greething() {
+            console.log('hello');
+        }
+        */
+       // we can use annonymous function (function without name)
+       const function1 = function () {
+            console.log('hello');
+        }
+        // function1 is a variable that holds a function
+        // function1 is a function
+        console.log(function1);
+        console.log(typeof function1); // function
+        function1(); // hello 
+
+        const object1 = {
+            name: 'john',
+            greet: function () {
+                console.log('hello3');
+            }
+        }
+        object1.greet(); // hello
+
+        // pass the value inside the function
+        const function2 = function (name) {
+            console.log(`hello ${name}`);
+        }
+        function2('john'); // hello john
+
+         // pass the fuction inside the function
+         function run(parameter){
+                parameter();
+         }
+         run(function(){
+             console.log('hello4');
+         }); // the function passing in the run function is called callback function
+
+
+
+         // setTimeout - built-in function
+         // setTimeout(function, time in milliseconds)
+            setTimeout(function(){
+                console.log('hello5');
+            }, 2000); // hello5 will be printed after 2 seconds
+        console.log('hello6'); // hello6 will be printed first
+        // this called asynchronous function - willnot wait for a line to finishe before going to the nect line
+        // setTimeout is a built-in function that is used to delay the execution of a function
+        // advantage of setTimeout - it will not block the execution of the code will waite background to finish the execution
+        // synchronous function - will wait for a line to finish before going to the next line
+
+        // setInterval - built-in function
+        // setInterval(function, time in milliseconds)
+        // setInterval will run the function every time the time is reached
+        /*
+        setInterval(function(){
+            console.log('hello7');
+        }, 2000); // hello7 will be printed every 2 seconds
+        */
+        // for stoping the setInterval we can use clearInterval
+        // clearInterval(intervalId) - intervalId is the id of the setInterval
+        // clearInterval will stop the setInterval
+        const intervalId = setInterval(function(){
+            console.log('hello8');
+        }, 2000); // hello8 will be printed every 2 seconds
+        clearInterval(intervalId); // hello8 will be printed only once
+
+    </script>
+</body>
+</html>

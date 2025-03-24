@@ -1,0 +1,71 @@
+ /* Basic styling for the game */
+ body {
+    text-align: center;
+    font-family: Arial, sans-serif;
+    background-color: #f0f8ff;
+}
+
+h1 {
+    color: #333;
+}
+
+/* Styling the buttons */
+button {
+    background-size: cover;
+    background-position: center;
+    border: 2px solid #050101;
+    border-radius: 50px;
+    width: 150px;
+    height: 150px;
+    margin: 10px;
+    cursor: pointer;
+    transition: transform 0.2s;
+    margin-top: 30px;
+    font-size: 2em;
+    font-weight: bold;
+    color: #ce1717;
+}
+
+button:hover {
+    transform: scale(1.1);
+}
+
+/* Adding images to buttons */
+#rock {
+    background-image: url('rock.png');
+}
+
+#paper {
+    background-image: url('paper.png');
+}
+
+#scissor {
+    background-image: url('scissors.png');
+}
+
+#computer-choice {
+    margin-top: 20px;
+    font-size: 1.5em;
+    color: #555;
+}
+
+#result-text {
+    margin-top: 30px;
+    font-size: 2em;
+    color: #5a8db5;
+}
+#score {
+    margin-top: 20px;
+    font-size: 1.5em;
+    color: #dc3c0f;
+}
+#reset {
+    background-color: #dc1613;
+    color: #060505;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    font-size: 1.5em;
+    cursor: pointer;
+    margin-top: 20px;
+}

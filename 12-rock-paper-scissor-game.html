@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissor Game</title>
+    <link rel="stylesheet" href="12-rock-paper-scissor-game.css">
+    
+</head>
+<body>
+
+    <h1>Rock Paper Scissor Game</h1>
+
+    <!-- Buttons -->
+    <button id="rock" onclick="
+        person = 'rock';
+        game = getrandom();
+        fulloutput(game, person);
+    "></button>
+
+    <button id="paper" onclick="
+        person = 'paper';
+        game = getrandom();
+        fulloutput(game, person);
+    "></button>
+
+    <button id="scissor" onclick="
+        person = 'scissor';
+        game = getrandom();
+        fulloutput(game, person);
+    "></button>
+
+    <!-- Display computer's choice and result -->
+    
+    <div id="computer-choice"></div>
+    <div id="result"></div>
+    <div id="result-text"></div>
+
+    <!-- Display score -->
+    <h1>Score</h1>
+    <div id="score"></div>
+
+    <!-- Reset Button -->
+    <button id="reset" onclick="
+        score.wins = 0;
+        score.losses = 0;
+        score.draws = 0;
+        updateScoreDisplay(); // Update the score display
+        saveScoreToLocalStorage(); // Save the reset score to local storage
+        console.log(score);
+    ">RESET</button>
+
+    <button class="auto">
+            Auto Play
+    </button>
+
+    <script src="12-rock-paper-scissor-game.js">
+    </script>
+
+</body>
+</html>
