@@ -87,3 +87,30 @@
             updateScoreDisplay(); // Update the score display
             saveScoreToLocalStorage(); // Save the updated score to local storage
         }
+
+        let autoplaing = false;
+        let intervalId;
+
+        function autoPlay() {
+        if (!autoplaing) {
+            intervalId = setInterval(function() {
+                const game = getrandom();
+                const person = getrandom();
+                fulloutput(game, person);
+            }, 2000);
+            autoplaing = true;
+            document.getElementById('auto').textContent = 'Stop Auto Play';
+        }
+        else {
+            clearInterval(intervalId);
+            document.getElementById('auto').textContent = 'Auto Play';
+            autoplaing = false;
+        }
+
+    }
+    /*
+    const elements = document.getElementsByClassName('result-class');
+    for (let element of elements) {
+        element.innerHTML = 'Auto Play Stopped';
+    }
+    */

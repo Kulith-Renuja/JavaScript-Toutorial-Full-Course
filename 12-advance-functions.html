@@ -15,6 +15,7 @@
             console.log('hello');
         }
         */
+       /*
        // we can use annonymous function (function without name)
        const function1 = function () {
             console.log('hello');
@@ -63,11 +64,12 @@
         // setInterval - built-in function
         // setInterval(function, time in milliseconds)
         // setInterval will run the function every time the time is reached
+        */
         /*
         setInterval(function(){
             console.log('hello7');
         }, 2000); // hello7 will be printed every 2 seconds
-        */
+        
         // for stoping the setInterval we can use clearInterval
         // clearInterval(intervalId) - intervalId is the id of the setInterval
         // clearInterval will stop the setInterval
@@ -75,6 +77,76 @@
             console.log('hello8');
         }, 2000); // hello8 will be printed every 2 seconds
         clearInterval(intervalId); // hello8 will be printed only once
+        */
+
+        // forEach - built-in function
+        // forEach(function) - function will be called for each element in the array
+       [
+          "john",
+          "jane",
+            "doe"
+       ].forEach(function(person){
+           console.log(person);
+       });
+
+         // foreach have 2 parameters - 1st parameter is the element and 2nd parameter is the index
+         [
+          "john",
+          "jane",
+            "doe"  
+         ].forEach(function(person, index){
+            console.log(person, index);
+        });
+
+        //  short form from 10.15 in video
+
+        //functions are values
+        // setTimeout(),setInterval(),forEach() are built-in functions
+        // arrow function - new way to write function
+        // addEventListener - built-in function
+        // .filter and .map - built-in function use with array
+        // closure - function inside a function that can access the outer function variable
+
+
+        // event listener - built-in function
+        // event listener is used to listen to the event
+        // event listener have 2 parameters - 1st parameter is the event and 2nd parameter is the function
+        // event listener will call the function when the event is triggered
+        // event listener is used to listen to the event
+
+        // .filter and .map - built-in function use with array
+        // .filter - used to filter the array
+        // .map - used to modify the array
+        // .filter and .map will return a new array
+        // .filter and .map will not modify the original array
+        // example of .filter
+        [1,-3,5].filter((value,index)=>{
+            return value > 0;
+        }); // [1, 5]
+
+        // remove negative numbers from the array
+        const numbers = [1, -2, 3, -4, 5, -6, 7, -8, 9, -10];
+        const positiveNumbers = numbers.filter(function(number){
+            return number >= 0;
+        }); // [1, 3, 5, 7, 9]
+
+        
+        // example of .map
+        console.log([1, 2, 3].map((value)=>{
+            return value * 2;
+        })); // [2, 4, 6]
+        // we can shorth above code
+        console.log([1, 2, 3].map((value)=> value * 2)); // [2, 4, 6]
+
+        const numbers2 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+        const squareNumbers = numbers2.map(function(number){
+            return number * number;
+        }); // [1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
+        
+        //closure - function inside a function that can access the outer function variable
+        // closure is used to create private variable
+
+
 
     </script>
 </body>

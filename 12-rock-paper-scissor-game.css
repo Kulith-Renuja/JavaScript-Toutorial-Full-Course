@@ -59,7 +59,8 @@ button:hover {
     font-size: 1.5em;
     color: #dc3c0f;
 }
-#reset {
+#reset,
+.auto {
     background-color: #dc1613;
     color: #060505;
     border: none;
@@ -68,4 +69,8 @@ button:hover {
     font-size: 1.5em;
     cursor: pointer;
     margin-top: 20px;
+}
+.auto {
+    margin-left: 10px;
+    background-color: #24dc13;
 }
